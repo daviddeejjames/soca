@@ -1,0 +1,86 @@
+/******************************************************************
+Site Name: SoCA - School Of Clay And Art
+Author: David James
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1040px;
+}
+
+.nav {
+	border-bottom: 1px solid #{$border-color};
+	width: 100%;
+	margin-top: 20px;
+	
+	li {
+		width: 25%;
+
+		a {
+			display: block;
+			text-align: center;
+			color: $text-color;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 0.75em;
+			opacity: 0.8;
+			font-weight: 800;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+				opacity: 1;
+				color: $text-color;
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+		/*
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/
+		ul.sub-menu,
+		ul.children {
+
+			li {
+
+				a {
+					padding-left: 30px;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+	} /* end .menu li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */
