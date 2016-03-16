@@ -24,7 +24,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 700px;
 }
 
 /*********************
@@ -40,27 +40,31 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	border: 0;
-	ul {
-		background:$black;
-		margin-top:0;
-	}
+	border-bottom: 1px solid #{$border-color};
+	width: 100%;
+	margin-top: 20px;
+	
 	li {
+		width: 25%;
 		float: left;
-		position: relative;
 
 		a {
-			border-bottom: 0;
+			display: block;
+			text-align: center;
+			color: $text-color;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 0.75em;
+			opacity: 0.8;
+			font-weight: 800;
 
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
 			&:hover, &:focus {
-				color: $white;
 				text-decoration: underline;
+				opacity: 1;
+				color: $text-color;
 			}
 		}
+
 
 		&:first-child {}
 		&:last-child {}
@@ -84,7 +88,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
+					//border-bottom: 1px solid #ccc;
 
 					&:hover,
 					&:focus {}

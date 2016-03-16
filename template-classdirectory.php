@@ -27,7 +27,7 @@
 							        <?php setup_postdata($post); ?>
 							        <li>
 							            <a href="<?php the_permalink(); ?>" class="class-link">
-							            	<span class="thumb"><?php the_post_thumbnail(); ?></span>
+							            	<span class="thumb"><?php the_post_thumbnail('large'); ?></span>
 											<span class="title"><?php the_title(); ?></span>
 											<span class="description"><?php the_field('description'); ?></span>
 							            </a>

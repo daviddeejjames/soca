@@ -138,6 +138,86 @@ function bones_register_sidebars() {
 	*/
 } 
 
+// allow special file type uploads in Wordpress media
+add_filter("upload_mimes","chr_custom_upload_mimes");
+if(!function_exists("chr_custom_upload_mimes")){
+  function chr_custom_upload_mimes($existing_mimes=array()){
+    $existing_mimes["svg"]="image/svg+xml"; // you may also want to make sure SVG media library thumbnails are fixed in chr-admin.js
+    return $existing_mimes;
+  }
+}
+
+// make thumbnail output use the background-image trick to give us better control over the image
+add_filter("post_thumbnail_html","chr_post_thumbnail_html",10,5);
+if(!function_exists("chr_post_thumbnail_html")){
+function chr_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr){
+  if(!is_admin()){
+    $title=esc_attr(get_the_title($post_id));
+    $classes=esc_attr("attachment-".$size." wp-post-image");
+    $img=wp_get_attachment_image_src($post_thumbnail_id,$size);
+    $img[0]=esc_url($img[0]);
+    array_walk($img,"esc_attr");
+    $html='';
+    //$html.='<a href="'.get_permalink($post_id).'" title="'.$title.'">';
+    $html.='<img width="'.$img[1].'" height="'.$img[2].'" src="'.$img[0].'" style="background-image: url(\''.$img[0].'\');" class="'.$classes.'" alt="'.$title.'" title="'.$title.'" />';
+    //$html.='</a>';
+  }
+  return $html;
+}
+}
+
+//Create an ACF image to a certain size and enable background trickery if necessary 
+function acf_image($image, $size){
+  $html = '';
+  $url = $image['url'];
+
+  if($url && trim($url) != '')
+  {
+    if($size && array_key_exists($size, $image['sizes']))
+    {
+      $width = $image['sizes'][$size . '-width'];
+      $height = $image['sizes'][$size . '-height'];
+      $url = $image['sizes'][$size];
+    }
+    else
+    {
+      $width = $image['width'];
+      $height = $image['height'];
+    }
+
+    $title = $image['title'];
+
+    if($width && $height && $url && trim($url) != '')
+    {
+      $html = '<img width="'.$width .'" height="'.$height .'" src="'.$url.'" style="background-image: url(\''.$url.'\');" alt="'.$title.'" title="'.$title.'" />';
+    }
+  }
+
+  return $html;
+}
+
+function the_excerpt_max_charlength($charlength) {
+    $type = get_post_type(); //Get Post Type
+
+      $excerpt = get_the_excerpt();
+
+        $charlength++;
+
+        if ( mb_strlen( $excerpt ) > $charlength ) {
+                $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+                $exwords = explode( ' ', $subex );
+                $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+                if ( $excut < 0 ) {
+                        echo mb_substr( $subex, 0, $excut );
+                } else {
+                        echo $subex;
+                }
+                echo '[...]';
+        } else {
+                echo $excerpt;
+        }
+}
+
 
 /************* COMMENT LAYOUT *********************/
 

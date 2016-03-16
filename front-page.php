@@ -11,7 +11,9 @@
 							{
 								foreach( $images as $image ): 
 						?>
-								<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="slide_img" />
+								<div class="slide_img">
+									<img src="<?php echo $image['sizes']['large']; ?>" style="background-image: url('<?php echo $image['sizes']['large']; ?>')" alt="<?php echo $image['alt']; ?>"/>
+								</div>
 						 <?php 
 						 		endforeach;
 						 	} 

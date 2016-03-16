@@ -86,6 +86,8 @@ function remove_nodes( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
 	$wp_admin_bar->remove_node( 'comments' );
 	$wp_admin_bar->remove_node( 'new-post' );
+	$wp_admin_bar->remove_node( 'themes' );
+	$wp_admin_bar->remove_node( 'menus' );
 	$wp_admin_bar->remove_node( 'customize' );
 }
 add_action( 'admin_bar_menu', 'remove_nodes', 999 );
