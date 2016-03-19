@@ -166,14 +166,6 @@ hr {
 /*
  * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
 */
-/* line 166, ../scss/partials/_normalize.scss */
-p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
 /*
  * Addresses margins set differently in IE6/7.
  */
@@ -2258,25 +2250,90 @@ SOCA STYLES
 }
 
 /* line 1005, ../scss/breakpoints/_base.scss */
+.about_content .top,
+.about_content .teachers,
+.about_content .bottom {
+  display: block;
+  margin-bottom: 30px;
+}
+/* line 1012, ../scss/breakpoints/_base.scss */
+.about_content .heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
+}
+/* line 1020, ../scss/breakpoints/_base.scss */
+.about_content .teachers .teacher {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 1026, ../scss/breakpoints/_base.scss */
+.about_content .teachers .image {
+  display: block;
+  float: left;
+  width: 30%;
+  height: 270px;
+}
+@media screen and (max-width: 767px) {
+  /* line 1026, ../scss/breakpoints/_base.scss */
+  .about_content .teachers .image {
+    width: 50%;
+    height: 200px;
+    float: none;
+  }
+}
+/* line 1037, ../scss/breakpoints/_base.scss */
+.about_content .teachers .image > img {
+  padding-left: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+/* line 1044, ../scss/breakpoints/_base.scss */
+.about_content .teachers .text {
+  display: block;
+  float: right;
+  width: 65%;
+}
+@media screen and (max-width: 767px) {
+  /* line 1044, ../scss/breakpoints/_base.scss */
+  .about_content .teachers .text {
+    width: 100%;
+    float: none;
+  }
+}
+/* line 1053, ../scss/breakpoints/_base.scss */
+.about_content .teachers .text .name {
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* line 1066, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li {
   display: block;
   width: 30%;
   float: left;
 }
 @media screen and (max-width: 1100px) {
-  /* line 1005, ../scss/breakpoints/_base.scss */
+  /* line 1066, ../scss/breakpoints/_base.scss */
   .directory-page .class-list li {
     width: 100%;
     margin-bottom: 20px;
   }
 }
-/* line 1015, ../scss/breakpoints/_base.scss */
+/* line 1076, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li a {
   color: #111;
   display: block;
   text-decoration: none;
 }
-/* line 1018, ../scss/breakpoints/_base.scss */
+/* line 1079, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li a .thumb {
   display: block;
   height: 300px;
@@ -2284,8 +2341,8 @@ SOCA STYLES
   margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 1025, ../scss/breakpoints/_base.scss */
-.directory-page .class-list li a .thumb img {
+/* line 1086, ../scss/breakpoints/_base.scss */
+.directory-page .class-list li a .thumb > img {
   -webkit-transition: transform 0.8s ease;
   transition: transform 0.8s ease;
   -moz-transform: scale(1);
@@ -2300,8 +2357,9 @@ SOCA STYLES
   display: block;
   width: 100%;
   height: 100%;
+  margin: 0;
 }
-/* line 1032, ../scss/breakpoints/_base.scss */
+/* line 1094, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li a .title {
   display: block;
   text-transform: uppercase;
@@ -2309,7 +2367,7 @@ SOCA STYLES
   font-weight: 700;
   margin-bottom: 15px;
 }
-/* line 1046, ../scss/breakpoints/_base.scss */
+/* line 1108, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li a:hover .thumb img {
   -webkit-transition: transform 0.8s ease;
   transition: transform 0.8s ease;
@@ -2318,24 +2376,25 @@ SOCA STYLES
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+  margin: 0;
 }
-/* line 1051, ../scss/breakpoints/_base.scss */
+/* line 1114, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li a:hover .title {
   text-decoration: underline;
 }
-/* line 1060, ../scss/breakpoints/_base.scss */
+/* line 1123, ../scss/breakpoints/_base.scss */
 .directory-page .class-list li:nth-child(2) {
   margin: 0 5%;
 }
 @media screen and (max-width: 1100px) {
-  /* line 1060, ../scss/breakpoints/_base.scss */
+  /* line 1123, ../scss/breakpoints/_base.scss */
   .directory-page .class-list li:nth-child(2) {
     margin: 0;
     margin-bottom: 20px;
   }
 }
 
-/* line 1072, ../scss/breakpoints/_base.scss */
+/* line 1135, ../scss/breakpoints/_base.scss */
 .contact_page .col1,
 .contact_page .col2,
 .contact_page .col3 {
@@ -2344,31 +2403,31 @@ SOCA STYLES
   width: 30%;
 }
 @media screen and (max-width: 1100px) {
-  /* line 1072, ../scss/breakpoints/_base.scss */
+  /* line 1135, ../scss/breakpoints/_base.scss */
   .contact_page .col1,
   .contact_page .col2,
   .contact_page .col3 {
     width: 100%;
   }
 }
-/* line 1083, ../scss/breakpoints/_base.scss */
+/* line 1146, ../scss/breakpoints/_base.scss */
 .contact_page .col2 {
   margin: 0 5%;
 }
 @media screen and (max-width: 1100px) {
-  /* line 1083, ../scss/breakpoints/_base.scss */
+  /* line 1146, ../scss/breakpoints/_base.scss */
   .contact_page .col2 {
     margin: 10px 0;
   }
 }
-/* line 1090, ../scss/breakpoints/_base.scss */
+/* line 1153, ../scss/breakpoints/_base.scss */
 .contact_page .address {
   display: block;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
 }
-/* line 1098, ../scss/breakpoints/_base.scss */
+/* line 1161, ../scss/breakpoints/_base.scss */
 .contact_page .phone {
   display: block;
   font-size: 18px;
@@ -2378,22 +2437,49 @@ SOCA STYLES
   color: #090909;
   text-decoration: none;
 }
-/* line 1107, ../scss/breakpoints/_base.scss */
+/* line 1170, ../scss/breakpoints/_base.scss */
 .contact_page .phone:hover {
   text-decoration: underline;
 }
-/* line 1113, ../scss/breakpoints/_base.scss */
+/* line 1176, ../scss/breakpoints/_base.scss */
 .contact_page .transport > h2 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 24px;
 }
-/* line 1118, ../scss/breakpoints/_base.scss */
+/* line 1181, ../scss/breakpoints/_base.scss */
 .contact_page .transport > p {
   marigin: 8px 0;
 }
+/* line 1187, ../scss/breakpoints/_base.scss */
+.contact_page .wpcf7-submit {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  border: none;
+  padding: 10px;
+  color: #111;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+/* line 1197, ../scss/breakpoints/_base.scss */
+.contact_page .wpcf7-submit:hover {
+  background-color: #111;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  color: #fff;
+}
+/* line 1203, ../scss/breakpoints/_base.scss */
+.contact_page .wpcf7-submit:focus {
+  -moz-transform: translate(0px, 3px);
+  -o-transform: translate(0px, 3px);
+  -ms-transform: translate(0px, 3px);
+  -webkit-transform: translate(0px, 3px);
+  transform: translate(0px, 3px);
+}
 
-/* line 1126, ../scss/breakpoints/_base.scss */
+/* line 1211, ../scss/breakpoints/_base.scss */
 .acf-map {
   width: 100%;
   height: 300px;
@@ -2402,18 +2488,19 @@ SOCA STYLES
 }
 
 /* fixes potential theme css conflict */
-/* line 1134, ../scss/breakpoints/_base.scss */
+/* line 1219, ../scss/breakpoints/_base.scss */
 .acf-map img {
   max-width: inherit !important;
+  margin: 0;
 }
 
-/* line 1140, ../scss/breakpoints/_base.scss */
+/* line 1226, ../scss/breakpoints/_base.scss */
 .gallery .image-list {
   list-style: none;
   margin: 0;
 }
-/* line 1144, ../scss/breakpoints/_base.scss */
-.gallery .image-list li {
+/* line 1230, ../scss/breakpoints/_base.scss */
+.gallery .image-list > li {
   -webkit-box-sizing: none !important;
   -moz-box-sizing: none !important;
   -ms-box-sizing: none !important;
@@ -2428,37 +2515,37 @@ SOCA STYLES
   line-height: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 1144, ../scss/breakpoints/_base.scss */
-  .gallery .image-list li {
+  /* line 1230, ../scss/breakpoints/_base.scss */
+  .gallery .image-list > li {
     width: 49%;
     float: left;
     padding: 0;
     padding-bottom: 2%;
   }
 }
-/* line 1162, ../scss/breakpoints/_base.scss */
-.gallery .image-list li:nth-child(3n + 2) {
+/* line 1248, ../scss/breakpoints/_base.scss */
+.gallery .image-list > li:nth-child(3n + 2) {
   margin: 0 2%;
 }
 @media screen and (max-width: 767px) {
-  /* line 1162, ../scss/breakpoints/_base.scss */
-  .gallery .image-list li:nth-child(3n + 2) {
+  /* line 1248, ../scss/breakpoints/_base.scss */
+  .gallery .image-list > li:nth-child(3n + 2) {
     margin: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 1170, ../scss/breakpoints/_base.scss */
-  .gallery .image-list li:nth-child(even) {
+  /* line 1256, ../scss/breakpoints/_base.scss */
+  .gallery .image-list > li:nth-child(even) {
     float: right;
   }
 }
-/* line 1178, ../scss/breakpoints/_base.scss */
-.gallery .image-list li a {
+/* line 1264, ../scss/breakpoints/_base.scss */
+.gallery .image-list > li > a {
   display: block;
   overflow: hidden;
 }
-/* line 1182, ../scss/breakpoints/_base.scss */
-.gallery .image-list li a img {
+/* line 1268, ../scss/breakpoints/_base.scss */
+.gallery .image-list > li > a > img {
   padding-left: 100%;
   background-size: cover;
   background-position: center;
@@ -2467,8 +2554,8 @@ SOCA STYLES
   margin: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 1182, ../scss/breakpoints/_base.scss */
-  .gallery .image-list li a img {
+  /* line 1268, ../scss/breakpoints/_base.scss */
+  .gallery .image-list > li > a > img {
     height: 175px;
   }
 }

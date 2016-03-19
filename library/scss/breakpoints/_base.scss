@@ -1000,6 +1000,67 @@ SOCA STYLES
 	margin-bottom: 0;
 }
 
+//== ABOUT PAGE ==
+.about_content{
+	.top,
+	.teachers,
+	.bottom{
+		display: block;
+		margin-bottom: 30px;
+	}
+
+	.heading{
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 22px;
+	}
+
+	.teachers{
+
+		.teacher{
+			display: block;
+			width: 100%;
+			margin-bottom: 30px;
+		}
+		
+		.image{
+			@include mq($mb_width){
+				width: 50%;
+				height: 200px;
+				float: none;
+			}
+			display: block;
+			float: left;
+			width: 30%;
+			height: 270px;
+			
+			> img{
+				@include bgtrick;
+				margin: 0;	
+			}
+			
+		}
+
+		.text{
+			@include mq($mb_width){
+				width: 100%;
+				float: none;
+			}
+			display: block;
+			float: right;
+			width: 65%;
+			
+			.name{
+				margin-top: 0;
+				font-weight: 700;
+				font-size: 18px;
+			}
+		}
+
+	}
+
+}
+
 //==CLASS DIRECTORY PAGE==
 .directory-page{
 	.class-list li{
@@ -1022,10 +1083,11 @@ SOCA STYLES
 				margin-bottom: 20px;
 				overflow: hidden;
 				
-				img{
+				> img{
 					@include transition(transform 0.8s ease);
 					@include scale(1);
 					@include bgtrick;
+					margin: 0;
 				}
 			}
 
@@ -1046,6 +1108,7 @@ SOCA STYLES
 				.thumb img{
 					@include transition(transform 0.8s ease);
 					@include scale(1.2);
+					margin: 0;
 				}
 
 				.title{
@@ -1120,6 +1183,28 @@ SOCA STYLES
 		}
 
 	}
+
+	.wpcf7-submit{
+		@include transition(all 0.8s ease);
+		font-family: $navfont;
+		font-size: 14px;
+		border: none;
+		padding: 10px;
+		color: #111;
+		background-color: #ccc;
+    	border-radius: 3px;
+		
+		&:hover{
+			background-color: #111;
+			@include transition(all 0.8s ease);
+			color: #fff;
+		}
+
+		&:focus{
+			@include translate(0px, 3px);
+		}
+
+	}
 }
 
 //MAP STYLING (CONTACT PAGE)
@@ -1133,6 +1218,7 @@ SOCA STYLES
 /* fixes potential theme css conflict */
 .acf-map img {
    max-width: inherit !important;
+   margin: 0;
 }
 
 
@@ -1141,7 +1227,7 @@ SOCA STYLES
 	list-style: none;
 	margin: 0;
 	
-	li{
+	> li{
 		@include box-sizing(none !important);
 		@include mq($mb_width){
 			width: 49%;
@@ -1175,11 +1261,11 @@ SOCA STYLES
 			
 	
 
-		a{
+		> a{
 			display: block;
 			overflow: hidden;
 			
-			img{
+			> img{
 				@include mq($mb_width){
 					height: 175px;
 				}	

@@ -416,13 +416,6 @@ body#tinymce.wp-editor hr {
   box-sizing: content-box;
   height: 0;
 }
-/* line 166, ../scss/partials/_normalize.scss */
-body#tinymce.wp-editor p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
 /* line 177, ../scss/partials/_normalize.scss */
 body#tinymce.wp-editor pre {
   margin: 0;
