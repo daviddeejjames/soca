@@ -76,6 +76,10 @@ USAGE: @include transition(all 0.2s ease-in-out);
   }
 }
 
+@mixin untrans(){
+  @include transition(none);
+}
+
 /*********************
 CSS3 GRADIENTS
 Be careful with these since they can

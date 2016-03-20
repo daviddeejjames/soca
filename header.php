@@ -170,10 +170,13 @@
 						<?php  
 							}
 						?>
-
-
 					</div>
-					<nav role="navigation">
+					<button id="ham_menu" class="hamburger hamburger--spin" type="button">
+					  <span class="hamburger-box">
+					    <span class="hamburger-inner"></span>
+					  </span>
+					</button>
+					<nav id="nav" role="navigation">
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)

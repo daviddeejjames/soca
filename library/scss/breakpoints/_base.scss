@@ -13,6 +13,9 @@ GENERAL STYLES
 *********************/
 
 body {
+	@include mq($mb_width){
+		margin-bottom: 50px;
+	}
 	margin-bottom: 30px;
 	font-family: $serif;
 	font-size: 100%;
@@ -29,6 +32,9 @@ html{
 }
 
 .footer{
+	@include mq($mb_width){
+		height: 50px;
+	}
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -168,9 +174,15 @@ HEADER STYLES
 #inner-header {
 	margin-top: 30px;
 	text-align: center;
+	position: relative;
 }
 
 .header_logo{
+	@include mq($mb_width){
+		margin: 0;
+		margin-left: 20px;
+		width: 150px;
+	}
 	display: block;
 	width: 250px;
 	margin: 0 auto;
@@ -179,6 +191,29 @@ HEADER STYLES
 		max-width: 100%;
 		height: auto;
 	}
+}
+
+#ham_menu{
+	@include mq($mb_width){
+		display: block;
+	}
+
+	display: none;
+	position: absolute;
+	top: 42px;
+	right: 0;
+}
+
+#nav{
+	@include mq($mb_width){
+		display: none;
+		margin-top: 40px;
+		border-top: 1px solid #a6a6a6;
+		border-bottom: 1px solid #a6a6a6;
+		@include animation(fader 1s ease-in);
+		
+	}
+	display: block;
 }
 
 /*********************
@@ -192,6 +227,10 @@ NAVIGATION STYLES
 	li {
 
 		a {
+			@include mq($mb_width){
+				@include untrans();
+				text-transform: uppercase;
+			}
 			@include transition(all 0.5s ease);
 			@include translate(0, 0);
 			display: block;
@@ -208,6 +247,10 @@ NAVIGATION STYLES
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
+				@include mq($mb_width){
+					@include untrans();
+					@include translate(0, 0);
+				}
 				@include transition(all 0.5s ease);
 				@include translate(0, -5px);
 				color: #000;
@@ -900,24 +943,24 @@ SOCA STYLES
 }
 
 //HEADER SOCIAL ICONS
+
 .inner-head .social{
 	@include mq($mb_width){
 		display: none;
-		//TODO FIX PLX
 	}
 
 	float: right;
 	position: relative;
 	top: -16px;
 	
-	a{
+	> a{
 		display: block;
 		margin-left: 20px;
 		width: 26px;
 		height: 26px;
 		text-decoration: none;
 		
-		svg{
+		> svg{
 			width: 26px;
 			height: 26px;
 			fill: #777;
@@ -927,13 +970,50 @@ SOCA STYLES
 		&:hover{
 			text-decoration: none;
 			
-			svg{
+			> svg{
 				@include transition(fill 0.5s ease);
 				fill: #111;
 			}
 		}
 	}
 }
+
+//MOBILE ONLY SOCIAL ICONS
+#inner-footer .social{
+	@include mq($mb_width){
+		display: block;
+	}
+
+	display: none;
+	text-align: center;
+
+	> a{
+		display: inline-block;
+		margin-left: 10px;
+		width: 20px;
+		height: 20px;
+		
+		text-decoration: none;
+		
+		> svg{
+			width: 20px;
+			height: 20px;
+			fill: #777;
+			@include transition(fill 0.5s ease);
+		}
+
+		&:hover{
+			text-decoration: none;
+			
+			> svg{
+				@include transition(fill 0.5s ease);
+				fill: #111;
+			}
+		}
+	}
+}
+
+
 
 //CONTENT
 // TO DOOOOOOOOOO FIX PLZZZZZ
@@ -1025,8 +1105,9 @@ SOCA STYLES
 		
 		.image{
 			@include mq($mb_width){
-				width: 50%;
+				width: 60%;
 				height: 200px;
+				margin-bottom: 15px;
 				float: none;
 			}
 			display: block;
@@ -1084,7 +1165,7 @@ SOCA STYLES
 				overflow: hidden;
 				
 				> img{
-					@include transition(transform 0.8s ease);
+					@include transition(transform 1s ease);
 					@include scale(1);
 					@include bgtrick;
 					margin: 0;
@@ -1106,8 +1187,8 @@ SOCA STYLES
 				
 				
 				.thumb img{
-					@include transition(transform 0.8s ease);
-					@include scale(1.2);
+					@include transition(transform 1s ease);
+					@include scale(1.1);
 					margin: 0;
 				}
 
@@ -1127,6 +1208,90 @@ SOCA STYLES
 		}
 		margin: 0 5%;
 	}
+}
+
+//CLASS PAGE
+.classes .the_class{
+	display: block;
+	margin-top: 40px;
+	.image{
+		@include mq($tb_width){
+			width: 50%;
+			height: 300px;
+			float: none;
+			margin: 0 auto;
+			margin-bottom: 25px;
+		}
+
+		@include mq($mb_width){
+			width: 100%;
+			height: 200px;
+			margin: 0;
+			margin-bottom: 25px;
+		}
+
+		display: block;
+		float: left;
+		width: 30%;
+		height: 270px;
+		
+		> img{
+			@include bgtrick;
+			margin: 0;	
+		}
+	}
+
+	.contentwrap{
+		
+		@include mq($tb_width){
+				width: 100%;
+				float: none;
+			}
+			display: block;
+			float: right;
+			width: 65%;
+			
+			.class_name{
+				display: inline-block;
+				margin-top: 0;
+				margin-bottom: 10px;
+				font-weight: 700;
+				
+				.subtitle{
+					display: inline-block;
+					font-weight: 400;
+				}
+			}
+
+			.more_info{
+				@include transition(all 0.8s ease);
+				display: block;
+				//float: right;
+				background-color: transparent;
+				border: none;
+				font-weight: 700;
+				text-transform: uppercase;
+				font-size: 12px;
+				border:  1px solid #111;
+				padding: 5px;
+				color: #111;
+				
+				&:hover{
+					@include transition(all 0.8s ease);
+					background-color: #cdcdcd;
+				}
+
+				&:focus{
+					@include translate(0px, 3px);
+				}
+			}
+
+			.morecontent{
+				margin-top: 20px;
+				display: none;
+			}
+	}
+
 }
 
 //== CONTACT PAGE ==

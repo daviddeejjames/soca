@@ -70,9 +70,19 @@ jQuery(document).ready(function($) {
     speed: 1000,
     fade: true,
     autoplay: true,
+    autoplaySpeed: 8000,
     cssEase: 'linear'
   });
       
+
+ jQuery('.more_info').click(function(){
+ 	jQuery(this).next().slideToggle(800);
+ });
+
+  jQuery('#ham_menu').click(function(){
+  	jQuery(this).toggleClass('is-active')
+ 	jQuery('#nav').slideToggle(800);
+ });
 
 
 }); /* end of as page load scripts */

@@ -48,11 +48,11 @@
 									$more_info = get_sub_field('more_info_content');
 
 							?>
-								<div class="the_class">
+								<div class="the_class clearfix">
 									<div class="image">
 										<?php echo acf_image($image, 'large'); ?>
 									</div>
-									<div class="contentwrap">
+									<div class="contentwrap clearfix">
 										<h4 class="class_name">
 												<?php echo $title; ?>
 											<span class="subtitle">
@@ -82,7 +82,7 @@
 											if($more_info)
 											{
 										?>
-												<button class="more_info">More Info</button>
+												<button class="more_info">More Info...</button>
 												<div class="morecontent">
 													<?php echo $more_info ?>
 												</div>
