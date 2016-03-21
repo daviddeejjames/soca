@@ -49,15 +49,32 @@
 
 							?>
 								<div class="the_class clearfix">
-									<div class="image">
-										<?php echo acf_image($image, 'large'); ?>
-									</div>
+
+										<?php  
+										if($image)
+										{
+										?>
+										<div class="image">
+											<?php 
+												echo acf_image($image, 'large');
+											?>
+										</div>
+										<?php
+										}
+										?>
 									<div class="contentwrap clearfix">
 										<h4 class="class_name">
 												<?php echo $title; ?>
-											<span class="subtitle">
-												<?php echo " - " . $subt; ?>
-											</span>
+											<?php 
+											if($subt)
+											{
+											?>
+												<span class="subtitle">
+													<?php echo " - " . $subt; ?>
+												</span>
+											<?php  
+											}	
+											?>
 										</h4>
 										<?php 
 											if( have_rows('daysandtimes') ) : 

@@ -403,8 +403,14 @@ be seen on the Desktop.
 .wrap {
   width: 1040px;
 }
+@media screen and (max-width: 1100px) {
+  /* line 12, ../scss/breakpoints/_1030up.scss */
+  .wrap {
+    width: 1000px;
+  }
+}
 
-/* line 16, ../scss/breakpoints/_1030up.scss */
+/* line 20, ../scss/breakpoints/_1030up.scss */
 .nav {
   border-bottom: 1px solid #a6a6a6;
   width: 100%;
@@ -413,7 +419,7 @@ be seen on the Desktop.
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 21, ../scss/breakpoints/_1030up.scss */
+/* line 25, ../scss/breakpoints/_1030up.scss */
 .nav li {
   width: 25%;
   /*
@@ -424,7 +430,7 @@ be seen on the Desktop.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-/* line 24, ../scss/breakpoints/_1030up.scss */
+/* line 28, ../scss/breakpoints/_1030up.scss */
 .nav li a {
   display: block;
   text-align: center;
@@ -435,13 +441,13 @@ be seen on the Desktop.
   opacity: 0.8;
   font-weight: 800;
 }
-/* line 34, ../scss/breakpoints/_1030up.scss */
+/* line 38, ../scss/breakpoints/_1030up.scss */
 .nav li a:hover, .nav li a:focus {
   text-decoration: underline;
   opacity: 1;
   color: #090909;
 }
-/* line 57, ../scss/breakpoints/_1030up.scss */
+/* line 61, ../scss/breakpoints/_1030up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
