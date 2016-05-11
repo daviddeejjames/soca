@@ -40,10 +40,12 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	border-bottom: 1px solid #{$border-color};
+	position: relative;
+	//border-bottom: 1px solid #{$border-color};
 	width: 100%;
 	margin-top: 20px;
 	
+
 	li {
 		width: 25%;
 		float: left;
@@ -136,7 +138,9 @@ NAVIGATION STYLES
 	li.current-menu-item,
 	li.current_page_item,
 	li.current_page_ancestor {
-		a {}
+		a {
+			text-decoration: underline;
+		}
 	}  /* end current highlighters */
 
 } /* end .nav */

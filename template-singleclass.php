@@ -13,7 +13,7 @@
 
 	<div id="inner-content" class="wrap cf">
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?>>
 
 			<header class="article-header">
 				<h1 class="page-title"><?php the_title(); ?></h1>
