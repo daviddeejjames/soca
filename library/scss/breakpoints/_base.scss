@@ -203,7 +203,7 @@ HEADER STYLES
 			height: 90px;
 		}
 		max-width: 250px;
-		height: auto;
+		height: 137px;
 	}
 }
 
@@ -217,6 +217,7 @@ HEADER STYLES
 	top: 0;
 	right: 0;
 	margin: 0 auto;
+	outline: none;
 }
 
 #nav{
@@ -245,7 +246,7 @@ $home_size: 24px;
 	@include translate(0, 0);
 	display: block;	
 	position: absolute;
-	top: 35px;
+	bottom: 15px;
 	left: 0;
 	width: $home_size;
 	height: $home_size;
@@ -1161,17 +1162,19 @@ SOCA STYLES
 //====Front Page====
 
 //FP Slider
-.fp_slideshow {
+.fp_slideshow.slick-slider{
 	@include mq($mb_width){
 		height: 250px;
-		margin: 15px 0;
+		margin-top: 15px;
+		margin-bottom: 40px;
 	}
 	oveflow: hidden;
 
 	width: 100%;
 	height: 500px; /* Height of images */
 	position: relative;
-	margin: 30px 0px;
+	margin-top: 30px;
+	margin-bottom: 40px;
 }
 
 .fp_slideshow .slide_img {
